@@ -1,0 +1,13 @@
+[package]
+name = "lottery-dct-meta"
+version = "0.0.0"
+authors = ["Andrei Marinica <andrei.marinica@dharitri.com>"]
+edition = "2021"
+publish = false
+
+[dependencies.lottery-dct]
+path = ".."
+
+[dependencies.dharitri-sc-meta]
+version = "0.13.6"
+default-features = false

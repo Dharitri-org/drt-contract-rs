@@ -1,0 +1,18 @@
+[package]
+name = "rewards-distribution"
+version = "0.0.0"
+authors = ["Claudiu-Marcel Bruda <claudiu.bruda@dharitri.com>"]
+edition = "2021"
+publish = false
+
+[lib]
+path = "src/rewards_distribution.rs"
+
+[dependencies.dharitri-sc]
+version = "0.13.6"
+
+[dependencies.dharitri-sc-modules]
+version = "0.13.6"
+
+[dev-dependencies.dharitri-sc-scenario]
+version = "0.13.6"

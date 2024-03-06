@@ -1,0 +1,30 @@
+[[bin]]
+name = "adder-interact"
+path = "src/adder_interact.rs"
+
+[package]
+name = "adder-interact"
+version = "0.0.0"
+authors = ["Ovidiu Stinga <ovidiu.stinga@dharitri.com>"]
+edition = "2021"
+publish = false
+
+[dependencies]
+toml = "0.7.2"
+
+[dependencies.clap]
+version = "4.1.0"
+features = [
+    "derive",
+    "cargo",
+]
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
+
+[dependencies.adder]
+path = ".."
+
+[dependencies.dharitri-sc-snippets]
+version = "0.13.5"

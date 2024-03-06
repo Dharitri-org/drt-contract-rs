@@ -1,0 +1,38 @@
+[package]
+name = "dharitri-wmoax-swap-sc"
+version = "0.13.5"
+authors = [
+    "Dorin Iancu <dorin.iancu@dharitri.com>",
+    "Dharitri <contact@dharitri.com>",
+]
+license = "GPL-3.0-only"
+readme = "README.md"
+repository = "https://github.com/dharitri/mx-sdk-rs"
+homepage = "https://dharitri.com/"
+documentation = "https://docs.dharitri.com/"
+description = "Dharitri Wrapped MOAX Smart Contract"
+keywords = [
+    "dharitri",
+    "wasm",
+    "webassembly",
+    "blockchain",
+    "contract",
+]
+categories = [
+    "no-std",
+    "wasm",
+    "cryptography::cryptocurrencies",
+]
+edition = "2021"
+
+[lib]
+path = "src/wmoax.rs"
+
+[dependencies.dharitri-sc]
+version = "0.13.6"
+
+[dependencies.dharitri-sc-modules]
+version = "0.13.6"
+
+[dev-dependencies.dharitri-sc-scenario]
+version = "0.13.6"

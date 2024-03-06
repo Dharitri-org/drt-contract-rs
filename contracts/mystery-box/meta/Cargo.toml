@@ -1,0 +1,12 @@
+[package]
+name = "mystery-box-meta"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies.mystery-box]
+path = ".."
+
+[dependencies.dharitri-sc-meta]
+version = "0.13.6"
+default-features = false
