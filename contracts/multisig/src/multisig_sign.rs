@@ -1,0 +1,104 @@
+use crate::multisig_state::{ActionId, GroupId};
+
+dharitri_sc::imports!();
+
+#[dharitri_sc::module]
+pub trait MultisigSignModule:
+    crate::multisig_state::MultisigStateModule
+    + crate::multisig_propose::MultisigProposeModule
+    + crate::multisig_perform::MultisigPerformModule
+    + crate::multisig_events::MultisigEventsModule
+{
+    /// Used by board members to sign actions.
+    #[endpoint]
+    fn sign(&self, action_id: ActionId) {
+        require!(
+            !self.action_mapper().item_is_empty_unchecked(action_id),
+            "action does not exist"
+        );
+
+        let (caller_id, caller_role) = self.get_caller_id_and_role();
+        require!(caller_role.can_sign(), "only board members can sign");
+
+        let _ = self.action_signer_ids(action_id).insert(caller_id);
+    }
+
+    /// Sign all the actions in the given batch
+    #[endpoint(signBatch)]
+    fn sign_batch(&self, group_id: GroupId) {
+        let (caller_id, caller_role) = self.get_caller_id_and_role();
+        require!(caller_role.can_sign(), "only board members can sign");
+
+        let mapper = self.action_groups(group_id);
+        require!(!mapper.is_empty(), "Invalid group ID");
+
+        for action_id in mapper.iter() {
+            require!(
+                !self.action_mapper().item_is_empty_unchecked(action_id),
+                "action does not exist"
+            );
+
+            let _ = self.action_signer_ids(action_id).insert(caller_id);
+        }
+    }
+
+    #[endpoint(signAndPerform)]
+    fn sign_and_perform(&self, action_id: ActionId) -> OptionalValue<ManagedAddress> {
+        self.sign(action_id);
+        self.perform_action_endpoint(action_id)
+    }
+
+    #[endpoint(signBatchAndPerform)]
+    fn sign_batch_and_perform(&self, group_id: GroupId) {
+        self.sign_batch(group_id);
+
+        for action_id in self.action_groups(group_id).iter() {
+            let _ = self.perform_action_endpoint(action_id);
+        }
+    }
+
+    /// Board members can withdraw their signatures if they no longer desire for the action to be executed.
+    /// Actions that are left with no valid signatures can be then deleted to free up storage.
+    #[endpoint]
+    fn unsign(&self, action_id: ActionId) {
+        let (caller_id, caller_role) = self.get_caller_id_and_role();
+        require!(caller_role.can_sign(), "only board members can un-sign");
+
+        self.unsign_action(action_id, caller_id);
+    }
+
+    /// Unsign all actions with the given IDs
+    #[endpoint(unsignBatch)]
+    fn unsign_batch(&self, group_id: GroupId) {
+        let (caller_id, caller_role) = self.get_caller_id_and_role();
+        require!(caller_role.can_sign(), "only board members can un-sign");
+
+        let mapper = self.action_groups(group_id);
+        require!(!mapper.is_empty(), "Invalid group ID");
+
+        for action_id in mapper.iter() {
+            self.unsign_action(action_id, caller_id);
+        }
+    }
+
+    fn unsign_action(&self, action_id: ActionId, caller_id: usize) {
+        require!(
+            !self.action_mapper().item_is_empty_unchecked(action_id),
+            "action does not exist"
+        );
+
+        let _ = self.action_signer_ids(action_id).swap_remove(&caller_id);
+    }
+
+    /// Returns `true` (`1`) if the user has signed the action.
+    /// Does not check whether or not the user is still a board member and the signature valid.
+    #[view]
+    fn signed(&self, user: ManagedAddress, action_id: ActionId) -> bool {
+        let user_id = self.user_mapper().get_user_id(&user);
+        if user_id == 0 {
+            false
+        } else {
+            self.action_signer_ids(action_id).contains(&user_id)
+        }
+    }
+}

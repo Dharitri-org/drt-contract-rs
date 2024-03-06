@@ -78,6 +78,7 @@
                 "arguments": [
                     "sc:multisig",
                     "0",
+                    "0x",
                     "str:MultiDCTNFTTransfer",
                     "address:dct-owner",
                     "3",

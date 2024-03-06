@@ -9,10 +9,10 @@ publish = false
 path = "src/bonding_curve_contract.rs"
 
 [dependencies.dharitri-sc]
-version = "0.13.6"
+version = "0.13.9"
 
 [dependencies.dharitri-sc-modules]
-version = "0.13.6"
+version = "0.13.9"
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.6"
+version = "0.13.9"
