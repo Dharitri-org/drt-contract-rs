@@ -3,17 +3,12 @@ use dharitri_sc::{
     types::{BigUint, CodeMetadata, ManagedAddress, ManagedBuffer, ManagedVec},
 };
 
-use crate::multisig_state::{ActionId, GroupId};
-
 dharitri_sc::derive_imports!();
-
-pub type GasLimit = u64;
 
 #[derive(NestedEncode, NestedDecode, TypeAbi, Clone)]
 pub struct CallActionData<M: ManagedTypeApi> {
     pub to: ManagedAddress<M>,
     pub moax_amount: BigUint<M>,
-    pub opt_gas_limit: Option<GasLimit>,
     pub endpoint_name: ManagedBuffer<M>,
     pub arguments: ManagedVec<M, ManagedBuffer<M>>,
 }
@@ -54,8 +49,7 @@ impl<M: ManagedTypeApi> Action<M> {
 /// Not used internally, just to retrieve results via endpoint.
 #[derive(TopEncode, TypeAbi)]
 pub struct ActionFullInfo<M: ManagedTypeApi> {
-    pub action_id: ActionId,
-    pub group_id: GroupId,
+    pub action_id: usize,
     pub action_data: Action<M>,
     pub signers: ManagedVec<M, ManagedAddress<M>>,
 }
