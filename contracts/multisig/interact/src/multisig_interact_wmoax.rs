@@ -1,5 +1,6 @@
 use std::time::Duration;
 
+use multisig::action::GasLimit;
 use dharitri_sc_scenario::dharitri_sc::types::FunctionCall;
 #[allow(unused_imports)]
 use dharitri_sc_snippets::dharitri_sc::types::{
@@ -67,6 +68,7 @@ impl MultisigInteract {
                     .call(self.state.multisig().propose_async_call(
                         bech32::decode(WMOAX_SWAP_SC_BECH32),
                         WRAP_AMOUNT,
+                        Option::<GasLimit>::None,
                         FunctionCall::new("wrapMoax"),
                     ))
                     .from(&self.wallet_address)
@@ -99,6 +101,7 @@ impl MultisigInteract {
                     .call(self.state.multisig().propose_async_call(
                         contract_call.basic.to,
                         0u64,
+                        Option::<GasLimit>::None,
                         contract_call.basic.function_call,
                     ))
                     .from(&self.wallet_address)

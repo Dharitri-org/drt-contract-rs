@@ -5,9 +5,9 @@
 ////////////////////////////////////////////////////
 
 // Init:                                 1
-// Endpoints:                           21
+// Endpoints:                           30
 // Async Callback:                       1
-// Total number of exported functions:  23
+// Total number of exported functions:  32
 
 #![no_std]
 #![allow(internal_features)]
@@ -22,24 +22,33 @@ dharitri_sc_wasm_adapter::endpoints! {
         init => init
         upgrade => upgrade
         deposit => deposit
-        signed => signed
-        sign => sign
-        unsign => unsign
-        discardAction => discard_action
+        discardAction => discard_action_endpoint
+        discardBatch => discard_batch
         getQuorum => quorum
         getNumBoardMembers => num_board_members
         getNumProposers => num_proposers
+        getActionGroup => action_groups
         getActionLastIndex => get_action_last_index
         proposeAddBoardMember => propose_add_board_member
         proposeAddProposer => propose_add_proposer
         proposeRemoveUser => propose_remove_user
         proposeChangeQuorum => propose_change_quorum
         proposeTransferExecute => propose_transfer_execute
+        proposeTransferExecuteDct => propose_transfer_execute_dct
         proposeAsyncCall => propose_async_call
         proposeSCDeployFromSource => propose_sc_deploy_from_source
         proposeSCUpgradeFromSource => propose_sc_upgrade_from_source
+        proposeBatch => propose_batch
+        sign => sign
+        signBatch => sign_batch
+        signAndPerform => sign_and_perform
+        signBatchAndPerform => sign_batch_and_perform
+        unsign => unsign
+        unsignBatch => unsign_batch
+        signed => signed
         quorumReached => quorum_reached
         performAction => perform_action_endpoint
+        performBatch => perform_batch
         dnsRegister => dns_register
     )
 }

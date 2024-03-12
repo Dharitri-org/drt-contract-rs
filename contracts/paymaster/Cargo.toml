@@ -13,7 +13,7 @@ path = "src/paymaster.rs"
 num-bigint = "0.4.2"
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.6"
+version = "0.13.9"
 
 [dev-dependencies.adder]
 path = "../adder"
@@ -22,4 +22,4 @@ path = "../adder"
 path = "../wmoax-swap"
 
 [dependencies.dharitri-sc]
-version = "0.13.6"
+version = "0.13.9"
