@@ -1,0 +1,12 @@
+[package]
+name = "dct-transfer-with-fee-meta"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies.dct-transfer-with-fee]
+path = ".."
+
+[dependencies.dharitri-sc-meta]
+version = "0.13.4"
+default-features = false

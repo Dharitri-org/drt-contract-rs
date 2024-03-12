@@ -1,0 +1,15 @@
+[package]
+name = "nft-escrow-meta"
+version = "0.0.0"
+edition = "2018"
+publish = false
+authors = ["you"]
+
+[dev-dependencies]
+
+[dependencies.nft-escrow]
+path = ".."
+
+[dependencies.dharitri-sc-meta]
+version = "0.13.4"
+default-features = false

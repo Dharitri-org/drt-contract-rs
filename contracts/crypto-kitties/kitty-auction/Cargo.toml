@@ -1,0 +1,23 @@
+[package]
+name = "kitty-auction"
+version = "0.0.0"
+authors = ["dorin-iancu <dorin.iancu@dharitri.com>"]
+edition = "2021"
+publish = false
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies.kitty]
+version = "0.0.0"
+path = "../common/kitty"
+
+[dependencies.kitty-ownership]
+version = "0.0.0"
+path = "../kitty-ownership"
+
+[dependencies.dharitri-sc]
+version = "0.13.4"
+
+[dev-dependencies.dharitri-sc-scenario]
+version = "0.13.4"

@@ -1,0 +1,32 @@
+[package]
+name = "multisig"
+version = "1.0.0"
+authors = ["Andrei Marinica <andrei.marinica@dharitri.com>"]
+edition = "2021"
+publish = false
+
+[lib]
+path = "src/multisig.rs"
+
+[dependencies.dharitri-sc]
+version = "0.13.4"
+
+[dependencies.dharitri-sc-modules]
+version = "0.13.4"
+
+[dev-dependencies]
+num-bigint = "0.4.2"
+num-traits = "0.2"
+hex = "0.4"
+
+[dev-dependencies.dharitri-sc-scenario]
+version = "0.13.4"
+
+[dev-dependencies.adder]
+path = "../adder"
+
+[dev-dependencies.factorial]
+path = "../factorial"
+
+[dev-dependencies.dharitri-wmoax-swap-sc]
+version = "0.13.4"
