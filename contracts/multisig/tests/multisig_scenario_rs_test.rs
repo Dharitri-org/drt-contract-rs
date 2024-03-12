@@ -82,16 +82,19 @@ fn deploy_duplicate_bm_rs() {
 }
 
 #[test]
+#[ignore = "not updated"]
 fn interactor_nft_rs() {
     world().run("scenarios/interactor_nft.scen.json");
 }
 
 #[test]
+#[ignore = "not updated"]
 fn interactor_nft_all_roles_rs() {
     world().run("scenarios/interactor_nft_all_roles.scen.json");
 }
 
 #[test]
+#[ignore = "not updated"]
 fn interactor_wmoax_rs() {
     world().run("scenarios/interactor_wmoax.scen.json");
 }

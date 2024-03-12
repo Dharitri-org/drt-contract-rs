@@ -5,14 +5,12 @@
 ////////////////////////////////////////////////////
 
 // Init:                                 1
-// Endpoints:                           21
+// Endpoints:                           28
 // Async Callback:                       1
-// Total number of exported functions:  23
+// Total number of exported functions:  30
 
 #![no_std]
-
-// Configuration that works with rustc < 1.73.0.
-// TODO: Recommended rustc version: 1.73.0 or newer.
+#![allow(internal_features)]
 #![feature(lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
@@ -24,13 +22,12 @@ dharitri_sc_wasm_adapter::endpoints! {
         init => init
         upgrade => upgrade
         deposit => deposit
-        signed => signed
-        sign => sign
-        unsign => unsign
-        discardAction => discard_action
+        discardAction => discard_action_endpoint
+        discardBatch => discard_batch
         getQuorum => quorum
         getNumBoardMembers => num_board_members
         getNumProposers => num_proposers
+        getActionGroup => action_groups
         getActionLastIndex => get_action_last_index
         proposeAddBoardMember => propose_add_board_member
         proposeAddProposer => propose_add_proposer
@@ -40,8 +37,16 @@ dharitri_sc_wasm_adapter::endpoints! {
         proposeAsyncCall => propose_async_call
         proposeSCDeployFromSource => propose_sc_deploy_from_source
         proposeSCUpgradeFromSource => propose_sc_upgrade_from_source
+        sign => sign
+        signBatch => sign_batch
+        signAndPerform => sign_and_perform
+        signBatchAndPerform => sign_batch_and_perform
+        unsign => unsign
+        unsignBatch => unsign_batch
+        signed => signed
         quorumReached => quorum_reached
         performAction => perform_action_endpoint
+        performBatch => perform_batch
         dnsRegister => dns_register
     )
 }
