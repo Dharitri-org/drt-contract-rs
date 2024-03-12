@@ -12,10 +12,10 @@ path = "src/check_pause.rs"
 num-bigint = "0.4.2"
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.9"
+version = "0.13.4"
 
 [dependencies.dharitri-sc]
-version = "0.13.9"
+version = "0.13.4"
 
 [dependencies.dharitri-sc-modules]
-version = "0.13.9"
+version = "0.13.4"

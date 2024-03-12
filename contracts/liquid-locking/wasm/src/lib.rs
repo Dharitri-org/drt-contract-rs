@@ -5,12 +5,14 @@
 ////////////////////////////////////////////////////
 
 // Init:                                 1
-// Endpoints:                           13
+// Endpoints:                           12
 // Async Callback (empty):               1
-// Total number of exported functions:  15
+// Total number of exported functions:  14
 
 #![no_std]
-#![allow(internal_features)]
+
+// Configuration that works with rustc < 1.73.0.
+// TODO: Recommended rustc version: 1.73.0 or newer.
 #![feature(lang_items)]
 
 dharitri_sc_wasm_adapter::allocator!();
@@ -20,7 +22,6 @@ dharitri_sc_wasm_adapter::endpoints! {
     liquid_locking
     (
         init => init
-        upgrade => upgrade
         set_unbond_period => set_unbond_period
         whitelist_token => whitelist_token
         blacklist_token => blacklist_token

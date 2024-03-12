@@ -8,7 +8,6 @@ permissions:
 
 jobs:
   build:
-    uses: dharitri/mx-sc-actions/.github/workflows/reproducible-build.yml@v2.3.5
+    uses: dharitri/mx-sc-actions/.github/workflows/reproducible-build.yml@v2.3.1
     with:
-      image_tag: v5.4.1
-      package_whole_project_src: true
+      image_tag: v5.3.0

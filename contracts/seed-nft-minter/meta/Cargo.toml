@@ -11,5 +11,5 @@ authors = ["Claudiu-Marcel Bruda <claudiu.bruda@dharitri.com>"]
 path = ".."
 
 [dependencies.dharitri-sc-meta]
-version = "0.13.9"
+version = "0.13.4"
 default-features = false
