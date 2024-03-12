@@ -9,7 +9,7 @@ publish = false
 path = "src/dct_transfer_with_fee.rs"
 
 [dependencies.dharitri-sc]
-version = "0.13.6"
+version = "0.13.9"
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.6"
+version = "0.13.9"

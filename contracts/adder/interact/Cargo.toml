@@ -27,4 +27,4 @@ features = ["derive"]
 path = ".."
 
 [dependencies.dharitri-sc-snippets]
-version = "0.13.5"
+version = "0.13.8"

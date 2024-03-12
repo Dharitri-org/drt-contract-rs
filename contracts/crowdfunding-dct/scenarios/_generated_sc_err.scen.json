@@ -52,6 +52,7 @@
                             ]
                         }
                     },
+                    "codeMetadata": "0x0506",
                     "developerRewards": "0"
                 }
             }
@@ -74,6 +75,7 @@
                             ]
                         }
                     },
+                    "codeMetadata": "0x0506",
                     "developerRewards": "0"
                 }
             }
@@ -90,6 +92,7 @@
                         "str:tokenIdentifier": "0x43524f57442d313233343536"
                     },
                     "code": "file:../output/crowdfunding-dct.wasm",
+                    "codeMetadata": "0x0506",
                     "owner": "0x66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
                     "developerRewards": "0"
                 }
@@ -113,6 +116,7 @@
                             ]
                         }
                     },
+                    "codeMetadata": "0x0506",
                     "developerRewards": "0"
                 }
             }
