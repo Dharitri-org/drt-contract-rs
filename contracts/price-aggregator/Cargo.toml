@@ -1,6 +1,6 @@
 [package]
 name = "dharitri-price-aggregator-sc"
-version = "0.13.4"
+version = "0.13.5"
 authors = [
     "Claudiu-Marcel Bruda <claudiu.bruda@dharitri.com>",
     "Dharitri <contact@dharitri.com>",
@@ -29,14 +29,14 @@ edition = "2021"
 path = "src/lib.rs"
 
 [dependencies.dharitri-sc]
-version = "0.13.4"
+version = "0.13.6"
 
 [dependencies.dharitri-sc-modules]
-version = "0.13.4"
+version = "0.13.6"
 
 [dependencies.arrayvec]
 version = "0.7.1"
 default-features = false
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.4"
+version = "0.13.6"

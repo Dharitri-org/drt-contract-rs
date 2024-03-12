@@ -21,7 +21,7 @@ version = "0.0.0"
 path = "../kitty-genetic-alg"
 
 [dependencies.dharitri-sc]
-version = "0.13.4"
+version = "0.13.6"
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.4"
+version = "0.13.6"

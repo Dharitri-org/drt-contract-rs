@@ -9,5 +9,5 @@ authors = ["Alin Cruceat <alin.cruceat@dharitri.com>"]
 path = ".."
 
 [dependencies.dharitri-sc-meta]
-version = "0.13.4"
+version = "0.13.6"
 default-features = false
