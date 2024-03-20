@@ -9,10 +9,10 @@ publish = false
 path = "src/empty.rs"
 
 [dependencies.dharitri-sc]
-version = "0.13.9"
+version = "0.13.4"
 
 [dev-dependencies]
 num-bigint = "0.4.2"
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.9"
+version = "0.13.4"

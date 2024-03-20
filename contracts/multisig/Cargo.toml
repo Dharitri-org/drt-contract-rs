@@ -9,10 +9,10 @@ publish = false
 path = "src/multisig.rs"
 
 [dependencies.dharitri-sc]
-version = "0.13.9"
+version = "0.13.4"
 
 [dependencies.dharitri-sc-modules]
-version = "0.13.9"
+version = "0.13.4"
 
 [dev-dependencies]
 num-bigint = "0.4.2"
@@ -20,7 +20,7 @@ num-traits = "0.2"
 hex = "0.4"
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.9"
+version = "0.13.4"
 
 [dev-dependencies.adder]
 path = "../adder"
@@ -29,4 +29,4 @@ path = "../adder"
 path = "../factorial"
 
 [dev-dependencies.dharitri-wmoax-swap-sc]
-version = "0.13.8"
+version = "0.13.4"
