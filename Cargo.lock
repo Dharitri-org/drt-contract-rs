@@ -56,9 +56,9 @@ checksum = "f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe"
 
 [[package]]
 name = "aho-corasick"
-version = "1.1.3"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916"
+checksum = "b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0"
 dependencies = [
  "memchr",
 ]
@@ -113,9 +113,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.81"
+version = "1.0.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0952808a6c2afd1aa8947271f3a60f1a6763c7b912d210184c5149b5cf147247"
+checksum = "5ad32ce52e4161730f7098c077cd2ed6229b5804ccf99e5366be1ab72a98b4e1"
 
 [[package]]
 name = "arrayvec"
@@ -183,9 +183,9 @@ checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
 name = "bitflags"
-version = "2.5.0"
+version = "2.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cf4b9d6a944f767f8e5e0db018570623c85f3d925ac718db4e06d0187adb21c1"
+checksum = "ed570934406eb16438a4e976b1b4500774099c13b8cb96eec99f620f05090ddf"
 
 [[package]]
 name = "block-buffer"
@@ -234,9 +234,9 @@ dependencies = [
 
 [[package]]
 name = "bumpalo"
-version = "3.15.4"
+version = "3.15.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7ff69b9dd49fd426c69a0db9fc04dd934cdb6645ff000864d98f7e2af8830eaa"
+checksum = "8ea184aa71bb362a1157c896979544cc23974e08fd265f29ea96b59f0b4a555b"
 
 [[package]]
 name = "byteorder"
@@ -252,9 +252,9 @@ checksum = "a2bd12c1caf447e69cd4528f47f94d203fd2582878ecb9e9465484c4148a8223"
 
 [[package]]
 name = "cc"
-version = "1.0.90"
+version = "1.0.89"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8cd6604a82acf3039f1144f54b8eb34e91ffba622051189e71b781822d5ee1f5"
+checksum = "a0ba8f7aaa012f30d5b2861462f6708eccd49c3c39863fe083a308035f63d723"
 
 [[package]]
 name = "cfg-if"
@@ -282,9 +282,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.5.3"
+version = "4.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "949626d00e063efc93b6dca932419ceb5432f99769911c0b995f7e884c778813"
+checksum = "c918d541ef2913577a0f9566e9ce27cb35b6df072075769e0b26cb5a554520da"
 dependencies = [
  "clap_builder",
  "clap_derive",
@@ -292,9 +292,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.2"
+version = "4.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ae129e2e766ae0ec03484e609954119f123cc1fe650337e155d03b022f24f7b4"
+checksum = "9f3e7391dad68afb0c2ede1bf619f579a3dc9c2ec67f089baa397123a2f3d1eb"
 dependencies = [
  "anstream",
  "anstyle",
@@ -304,9 +304,9 @@ dependencies = [
 
 [[package]]
 name = "clap_derive"
-version = "4.5.3"
+version = "4.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "90239a040c80f5e14809ca132ddc4176ab33d5e17e49691793296e3fcb34d72f"
+checksum = "307bc0538d5f0f83b8248db3087aa92fe504e4691294d0c96c0eabc33f47ba47"
 dependencies = [
  "heck",
  "proc-macro2",
@@ -511,9 +511,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-chain-scenario-format"
-version = "0.11.3"
+version = "0.11.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "788c20ab5c33417a1253653dee00efdf2b7b6a89cbdd312257cbc1d6f64736f8"
+checksum = "e0346031d1bc30c3483f510e0ce3fdbcc18fbb6e2f5304df17bbad924d25e0de"
 dependencies = [
  "bech32",
  "hex",
@@ -526,11 +526,12 @@ dependencies = [
 
 [[package]]
 name = "dharitri-chain-vm"
-version = "0.6.3"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4d0641d5fb54aa2bc3a455126d889ab85fb53d502ee934b8d7b919f81be46217"
+checksum = "1581f290baebeea62460e2524e42cf536379fd94a92f4c5ed0fe3bdb26cd2b73"
 dependencies = [
- "bitflags 2.5.0",
+ "bitflags 2.4.2",
+ "colored",
  "dharitri-chain-vm-executor",
  "ed25519-dalek",
  "hex",
@@ -552,7 +553,7 @@ checksum = "553150902e88ebe93a6db89903f51c85546d32345a592a2bbf6a896f21ae0a8b"
 
 [[package]]
 name = "dharitri-price-aggregator-sc"
-version = "0.13.5"
+version = "0.13.8"
 dependencies = [
  "arrayvec",
  "dharitri-sc",
@@ -571,11 +572,11 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc"
-version = "0.13.6"
+version = "0.13.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "abdc7c34d77d1e1be455ff5eba3a41641c9d810bc2afe49779a0da2a16f63969"
+checksum = "75da5d59575e0e5922bcee8ae0186aa026eb9141662e6450bee0926f1dc49108"
 dependencies = [
- "bitflags 2.5.0",
+ "bitflags 2.4.2",
  "dharitri-sc-codec",
  "dharitri-sc-derive",
  "hex-literal",
@@ -584,9 +585,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-codec"
-version = "0.4.8"
+version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f100a25eb6e5be890b1e196296647791d63b08807c8fba87b58852cdf9f241c"
+checksum = "98e245bc10886cb3f6e6fedf02081d103b255a8a59b0547864aabeb953a80a67"
 dependencies = [
  "arrayvec",
  "dharitri-sc-codec-derive",
@@ -595,9 +596,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-codec-derive"
-version = "0.4.8"
+version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "10ff854381670aa61d79a731f081fec01ab639daaa997883e6f34c50b17f8161"
+checksum = "24212bd34bea01e3e79df9af36ac51548e0860bc93fafc126aa8d0d71231ccbb"
 dependencies = [
  "hex",
  "proc-macro2",
@@ -607,9 +608,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-derive"
-version = "0.13.6"
+version = "0.13.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0a1bf143fba1932f8b97c7a154904edec3220274dc902c0f3225b8165e67e5a7"
+checksum = "4347aa56e0655a05a967d3887124c58cd7af62d63da44dc8d1621847f897530d"
 dependencies = [
  "hex",
  "proc-macro2",
@@ -620,9 +621,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-meta"
-version = "0.13.6"
+version = "0.13.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aba401c51032e033781ddebe586f7ed2019bf56c75d5d9ebdfd06baf4de2a6d1"
+checksum = "f0d23f0ec3c014a6e67c971a6809ad8bb8b43dcc04c445525da3b603d72743b8"
 dependencies = [
  "clap",
  "colored",
@@ -636,28 +637,29 @@ dependencies = [
  "reqwest",
  "ruplacer",
  "rustc_version",
+ "semver",
  "serde",
  "serde_json",
- "toml 0.8.12",
- "wasmparser 0.118.2",
+ "toml 0.8.10",
+ "wasmparser 0.120.0",
  "wasmprinter",
  "zip",
 ]
 
 [[package]]
 name = "dharitri-sc-modules"
-version = "0.13.6"
+version = "0.13.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8a063ebacf01f8eca84fffb62644d51f8c139e355f26a759c43011e47062dccc"
+checksum = "fe384ba266e864d39d8bf85aa5e6b701fa6143daed0c3a8ee6e4bca0b94a2951"
 dependencies = [
  "dharitri-sc",
 ]
 
 [[package]]
 name = "dharitri-sc-scenario"
-version = "0.13.6"
+version = "0.13.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dbdb7a442a34538ca21846388ca4dd6aae94acf65e2cac540179571d5f19f287"
+checksum = "3931ca63ddeb3525c8ab38c484646050ca0519b97e6ea6950abcaddc86d86b4e"
 dependencies = [
  "base64",
  "bech32",
@@ -683,9 +685,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-snippets"
-version = "0.13.6"
+version = "0.13.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5681be3d434225a45871cdffd8b9230949d836b9348340e325429ba2c24fd7d7"
+checksum = "66feb86205ab38ecdf252d5e52a9b5b9dee00e8071575d72233dc6698e826337"
 dependencies = [
  "base64",
  "dharitri-sc-scenario",
@@ -725,7 +727,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-wmoax-swap-sc"
-version = "0.13.5"
+version = "0.13.8"
 dependencies = [
  "dharitri-sc",
  "dharitri-sc-modules",
@@ -734,9 +736,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-wmoax-swap-sc"
-version = "0.13.6"
+version = "0.13.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2919f52d4155c8f6d750d6756993a02b049a259ad6410fc768033b8928a5d14e"
+checksum = "010ae10a13207f363138673e374b6048d25f21a097e0f24c733d31f17d176dbd"
 dependencies = [
  "dharitri-sc",
  "dharitri-sc-modules",
@@ -748,7 +750,7 @@ version = "0.0.0"
 dependencies = [
  "dharitri-sc",
  "dharitri-sc-meta",
- "dharitri-wmoax-swap-sc 0.13.5",
+ "dharitri-wmoax-swap-sc 0.13.8",
 ]
 
 [[package]]
@@ -785,6 +787,27 @@ version = "0.0.0"
 dependencies = [
  "dharitri-sc-meta",
  "digital-cash",
+]
+
+[[package]]
+name = "dn404"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc",
+ "dharitri-sc-modules",
+ "dharitri-sc-scenario",
+ "hex",
+ "hex-literal",
+ "num-bigint",
+ "num-traits",
+]
+
+[[package]]
+name = "dn404-meta"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc-meta",
+ "dn404",
 ]
 
 [[package]]
@@ -849,16 +872,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c34f04666d835ff5d62e058c3995147c06f42fe86ff053337632bca83e42702d"
 
 [[package]]
-name = "env_logger"
-version = "0.10.2"
+name = "env_filter"
+version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4cd405aab171cb85d6735e5c8d9db038c17d3ca007a4d2c25f337935c3d90580"
+checksum = "a009aa4810eb158359dda09d0c87378e4bbb89b5a801f016885a4707ba24f7ea"
 dependencies = [
- "humantime",
- "is-terminal",
  "log",
  "regex",
- "termcolor",
+]
+
+[[package]]
+name = "env_logger"
+version = "0.11.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c012a26a7f605efc424dd53697843a72be7dc86ad2d01f7814337794a12231d"
+dependencies = [
+ "anstream",
+ "anstyle",
+ "env_filter",
+ "humantime",
+ "log",
 ]
 
 [[package]]
@@ -866,6 +899,24 @@ name = "equivalent"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5"
+
+[[package]]
+name = "erc3643"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc",
+ "dharitri-sc-modules",
+ "dharitri-sc-scenario",
+ "num-bigint",
+]
+
+[[package]]
+name = "erc3643-meta"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc-meta",
+ "erc3643",
+]
 
 [[package]]
 name = "errno"
@@ -1128,9 +1179,9 @@ dependencies = [
 
 [[package]]
 name = "h2"
-version = "0.3.25"
+version = "0.3.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4fbd2820c5e49886948654ab546d0688ff24530286bdcf8fca3cefb16d4618eb"
+checksum = "bb2c4422095b67ee78da96fbb51a4cc413b3b25883c7717ff7ca1ab31022c9c9"
 dependencies = [
  "bytes",
  "fnv",
@@ -1153,9 +1204,9 @@ checksum = "290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604"
 
 [[package]]
 name = "heck"
-version = "0.5.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
+checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
 
 [[package]]
 name = "hermit-abi"
@@ -1302,17 +1353,6 @@ name = "ipnet"
 version = "2.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f518f335dce6725a761382244631d86cf0ccb2863413590b31338feb467f9c3"
-
-[[package]]
-name = "is-terminal"
-version = "0.4.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f23ff5ef2b80d608d61efee834934d862cd92461afc0560dedf493e4c033738b"
-dependencies = [
- "hermit-abi",
- "libc",
- "windows-sys 0.52.0",
-]
 
 [[package]]
 name = "itertools"
@@ -1517,7 +1557,7 @@ dependencies = [
  "dharitri-sc",
  "dharitri-sc-modules",
  "dharitri-sc-scenario",
- "dharitri-wmoax-swap-sc 0.13.6",
+ "dharitri-wmoax-swap-sc 0.13.9",
  "factorial",
  "hex",
  "num-bigint",
@@ -1534,7 +1574,7 @@ dependencies = [
  "dharitri-sc-snippets",
  "multisig",
  "serde",
- "toml 0.8.12",
+ "toml 0.8.10",
 ]
 
 [[package]]
@@ -1675,9 +1715,9 @@ dependencies = [
 
 [[package]]
 name = "num-traits"
-version = "0.2.18"
+version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "da0df0e5185db44f69b44f26786fe401b6c293d1907744beaa7fa62b2e5a517a"
+checksum = "39e3200413f237f41ab11ad6d161bc7239c84dcb631773ccd7de3dfe4b5c267c"
 dependencies = [
  "autocfg",
 ]
@@ -1736,7 +1776,7 @@ version = "0.10.64"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "95a0481286a310808298130d22dd1fef0fa571e05a8f44ec801801e84b216b1f"
 dependencies = [
- "bitflags 2.5.0",
+ "bitflags 2.4.2",
  "cfg-if",
  "foreign-types",
  "libc",
@@ -1851,7 +1891,7 @@ dependencies = [
  "adder",
  "dharitri-sc",
  "dharitri-sc-scenario",
- "dharitri-wmoax-swap-sc 0.13.5",
+ "dharitri-wmoax-swap-sc 0.13.8",
  "num-bigint",
 ]
 
@@ -1930,11 +1970,29 @@ checksum = "5b40af805b3121feab8a3c29f04d8ad262fa8e0561883e7653e024ae4479e6de"
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.79"
+version = "1.0.78"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e835ff2298f5721608eb1a980ecaee1aef2c132bf95ecc026a11b7bf3c01c02e"
+checksum = "e2422ad645d89c99f8f3e6b88a9fdeca7fabeac836b1002371c4367c8f984aae"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "proxy-deployer"
+version = "0.0.0"
+dependencies = [
+ "adder",
+ "dharitri-sc",
+ "dharitri-sc-modules",
+ "dharitri-sc-scenario",
+]
+
+[[package]]
+name = "proxy-deployer-meta"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc-meta",
+ "proxy-deployer",
 ]
 
 [[package]]
@@ -2100,9 +2158,9 @@ checksum = "c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f"
 
 [[package]]
 name = "reqwest"
-version = "0.11.27"
+version = "0.11.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dd67538700a17451e7cba03ac727fb961abb7607553461627b97de0b89cf4a62"
+checksum = "c6920094eb85afde5e4a138be3f2de8bbdf28000f0029e72c45025a56b042251"
 dependencies = [
  "base64",
  "bytes",
@@ -2186,11 +2244,11 @@ dependencies = [
 
 [[package]]
 name = "rustix"
-version = "0.38.32"
+version = "0.38.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "65e04861e65f21776e67888bfbea442b3642beaa0138fdb1dd7a84a52dffdb89"
+checksum = "6ea3e1a662af26cd7a3ba09c0297a31af215563ecf42817c98df621387f4e949"
 dependencies = [
- "bitflags 2.5.0",
+ "bitflags 2.4.2",
  "errno",
  "libc",
  "linux-raw-sys",
@@ -2434,9 +2492,9 @@ checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
 
 [[package]]
 name = "syn"
-version = "2.0.53"
+version = "2.0.48"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7383cd0e49fff4b6b90ca5670bfd3e9d6a733b3f90c686605aa7eec8c4996032"
+checksum = "0f3531638e407dfc0814761abb7c00a5b54992b849452a0646b7f65c9f770f3f"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2480,15 +2538,6 @@ dependencies = [
  "fastrand",
  "rustix",
  "windows-sys 0.52.0",
-]
-
-[[package]]
-name = "termcolor"
-version = "1.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06794f8f6c5c898b3275aebefa6b8a1cb24cd2c6c79397ab15774837a0bc5755"
-dependencies = [
- "winapi-util",
 ]
 
 [[package]]
@@ -2590,15 +2639,15 @@ dependencies = [
 
 [[package]]
 name = "toml"
-version = "0.8.12"
+version = "0.8.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e9dd1545e8208b4a5af1aa9bbd0b4cf7e9ea08fabc5d0a5c67fcaafa17433aa3"
+checksum = "9a9aad4a3066010876e8dcf5a8a06e70a558751117a145c6ce2b82c2e2054290"
 dependencies = [
  "indexmap",
  "serde",
  "serde_spanned",
  "toml_datetime",
- "toml_edit 0.22.8",
+ "toml_edit 0.22.6",
 ]
 
 [[package]]
@@ -2625,9 +2674,9 @@ dependencies = [
 
 [[package]]
 name = "toml_edit"
-version = "0.22.8"
+version = "0.22.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c12219811e0c1ba077867254e5ad62ee2c9c190b0d957110750ac0cda1ae96cd"
+checksum = "2c1b5fd4128cc8d3e0cb74d4ed9a9cc7c7284becd4df68f5f940e1ad123606f6"
 dependencies = [
  "indexmap",
  "serde",
@@ -2828,10 +2877,11 @@ checksum = "af190c94f2773fdb3729c55b007a722abb5384da03bc0986df4c289bf5567e96"
 
 [[package]]
 name = "wasmparser"
-version = "0.118.2"
+version = "0.120.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "77f1154f1ab868e2a01d9834a805faca7bf8b50d041b4ca714d005d0dab1c50c"
+checksum = "e9148127f39cbffe43efee8d5442b16ecdba21567785268daa1ec9e134389705"
 dependencies = [
+ "bitflags 2.4.2",
  "indexmap",
  "semver",
 ]
@@ -2842,7 +2892,7 @@ version = "0.121.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9dbe55c8f9d0dbd25d9447a5a889ff90c0cc3feaa7395310d3d826b2c703eaab"
 dependencies = [
- "bitflags 2.5.0",
+ "bitflags 2.4.2",
  "indexmap",
  "semver",
 ]

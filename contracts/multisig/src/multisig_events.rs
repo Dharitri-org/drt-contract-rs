@@ -1,3 +1,5 @@
+use dharitri_sc_modules::transfer_role_proxy::PaymentsVec;
+
 use crate::{
     action::{ActionFullInfo, GasLimit},
     multisig_state::ActionId,
@@ -39,12 +41,23 @@ pub trait MultisigEventsModule {
         #[indexed] arguments: &MultiValueManagedVec<ManagedBuffer>,
     );
 
-    #[event("performTransferExecute")]
-    fn perform_transfer_execute_event(
+    #[event("performTransferExecuteMoax")]
+    fn perform_transfer_execute_moax_event(
         &self,
         #[indexed] action_id: ActionId,
         #[indexed] to: &ManagedAddress,
         #[indexed] moax_value: &BigUint,
+        #[indexed] gas: GasLimit,
+        #[indexed] endpoint: &ManagedBuffer,
+        #[indexed] arguments: &MultiValueManagedVec<ManagedBuffer>,
+    );
+
+    #[event("performTransferExecuteDct")]
+    fn perform_transfer_execute_dct_event(
+        &self,
+        #[indexed] action_id: ActionId,
+        #[indexed] to: &ManagedAddress,
+        #[indexed] tokens: &PaymentsVec<Self::Api>,
         #[indexed] gas: GasLimit,
         #[indexed] endpoint: &ManagedBuffer,
         #[indexed] arguments: &MultiValueManagedVec<ManagedBuffer>,
