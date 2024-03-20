@@ -12,7 +12,7 @@ path = "src/lib.rs"
 num-bigint = "0.4.2"
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.4"
+version = "0.13.6"
 
 [dependencies.dharitri-sc]
-version = "0.13.4"
+version = "0.13.6"
