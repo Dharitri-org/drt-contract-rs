@@ -1,13 +1,13 @@
 [package]
 name = "dharitri-price-aggregator-sc"
-version = "0.13.8"
+version = "0.13.4"
 authors = [
     "Claudiu-Marcel Bruda <claudiu.bruda@dharitri.com>",
     "Dharitri <contact@dharitri.com>",
 ]
 license = "GPL-3.0-only"
 readme = "README.md"
-repository = "https://github.com/Battula-anil-app-could/dx-sdk-rs-new"
+repository = "https://github.com/dharitri/mx-sdk-rs"
 homepage = "https://dharitri.com/"
 documentation = "https://docs.dharitri.com/"
 description = "Dharitri Price aggregator Smart Contract"
@@ -29,14 +29,14 @@ edition = "2021"
 path = "src/lib.rs"
 
 [dependencies.dharitri-sc]
-version = "0.13.9"
+version = "0.13.4"
 
 [dependencies.dharitri-sc-modules]
-version = "0.13.9"
+version = "0.13.4"
 
 [dependencies.arrayvec]
 version = "0.7.1"
 default-features = false
 
 [dev-dependencies.dharitri-sc-scenario]
-version = "0.13.9"
+version = "0.13.4"

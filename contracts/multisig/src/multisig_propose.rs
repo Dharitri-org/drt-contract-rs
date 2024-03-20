@@ -1,16 +1,11 @@
-use dharitri_sc_modules::transfer_role_proxy::PaymentsVec;
-
-use crate::{
-    action::{Action, CallActionData, GasLimit},
-    multisig_state::{ActionId, GroupId},
-};
+use crate::action::{Action, CallActionData};
 
 dharitri_sc::imports!();
 
 /// Contains all events that can be emitted by the contract.
 #[dharitri_sc::module]
 pub trait MultisigProposeModule: crate::multisig_state::MultisigStateModule {
-    fn propose_action(&self, action: Action<Self::Api>) -> ActionId {
+    fn propose_action(&self, action: Action<Self::Api>) -> usize {
         let (caller_id, caller_role) = self.get_caller_id_and_role();
         require!(
             caller_role.can_propose(),
@@ -21,7 +16,7 @@ pub trait MultisigProposeModule: crate::multisig_state::MultisigStateModule {
         if caller_role.can_sign() {
             // also sign
             // since the action is newly created, the caller can be the only signer
-            let _ = self.action_signer_ids(action_id).insert(caller_id);
+            self.action_signer_ids(action_id).insert(caller_id);
         }
 
         action_id
@@ -30,26 +25,45 @@ pub trait MultisigProposeModule: crate::multisig_state::MultisigStateModule {
     /// Initiates board member addition process.
     /// Can also be used to promote a proposer to board member.
     #[endpoint(proposeAddBoardMember)]
-    fn propose_add_board_member(&self, board_member_address: ManagedAddress) -> ActionId {
+    fn propose_add_board_member(&self, board_member_address: ManagedAddress) -> usize {
         self.propose_action(Action::AddBoardMember(board_member_address))
     }
 
     /// Initiates proposer addition process..
     /// Can also be used to demote a board member to proposer.
     #[endpoint(proposeAddProposer)]
-    fn propose_add_proposer(&self, proposer_address: ManagedAddress) -> ActionId {
+    fn propose_add_proposer(&self, proposer_address: ManagedAddress) -> usize {
         self.propose_action(Action::AddProposer(proposer_address))
     }
 
     /// Removes user regardless of whether it is a board member or proposer.
     #[endpoint(proposeRemoveUser)]
-    fn propose_remove_user(&self, user_address: ManagedAddress) -> ActionId {
+    fn propose_remove_user(&self, user_address: ManagedAddress) -> usize {
         self.propose_action(Action::RemoveUser(user_address))
     }
 
     #[endpoint(proposeChangeQuorum)]
-    fn propose_change_quorum(&self, new_quorum: usize) -> ActionId {
+    fn propose_change_quorum(&self, new_quorum: usize) -> usize {
         self.propose_action(Action::ChangeQuorum(new_quorum))
+    }
+
+    fn prepare_call_data(
+        &self,
+        to: ManagedAddress,
+        moax_amount: BigUint,
+        function_call: FunctionCall,
+    ) -> CallActionData<Self::Api> {
+        require!(
+            moax_amount > 0 || !function_call.is_empty(),
+            "proposed action has no effect"
+        );
+
+        CallActionData {
+            to,
+            moax_amount,
+            endpoint_name: function_call.function_name,
+            arguments: function_call.arg_buffer.into_vec_of_buffers(),
+        }
     }
 
     /// Propose a transaction in which the contract will perform a transfer-execute call.
@@ -61,45 +75,13 @@ pub trait MultisigProposeModule: crate::multisig_state::MultisigStateModule {
         &self,
         to: ManagedAddress,
         moax_amount: BigUint,
-        opt_gas_limit: Option<GasLimit>,
         function_call: FunctionCall,
-    ) -> ActionId {
-        require!(
-            moax_amount > 0 || !function_call.is_empty(),
-            "proposed action has no effect"
-        );
-
-        let call_data = CallActionData {
-            to,
-            moax_amount,
-            opt_gas_limit,
-            endpoint_name: function_call.function_name,
-            arguments: function_call.arg_buffer.into_vec_of_buffers(),
-        };
-
-        self.propose_action(Action::SendTransferExecuteMoax(call_data))
+    ) -> usize {
+        let call_data = self.prepare_call_data(to, moax_amount, function_call);
+        self.propose_action(Action::SendTransferExecute(call_data))
     }
 
-    #[endpoint(proposeTransferExecuteDct)]
-    fn propose_transfer_execute_dct(
-        &self,
-        to: ManagedAddress,
-        tokens: PaymentsVec<Self::Api>,
-        opt_gas_limit: Option<GasLimit>,
-        function_call: FunctionCall,
-    ) -> ActionId {
-        require!(!tokens.is_empty(), "No tokens to transfer");
-
-        self.propose_action(Action::SendTransferExecuteDct {
-            to,
-            tokens,
-            opt_gas_limit,
-            endpoint_name: function_call.function_name,
-            arguments: function_call.arg_buffer.into_vec_of_buffers(),
-        })
-    }
-
-    /// Propose a transaction in which the contract will perform an async call call.
+    /// Propose a transaction in which the contract will perform a transfer-execute call.
     /// Can call smart contract endpoints directly.
     /// Can use DCTTransfer/DCTNFTTransfer/MultiDCTTransfer to send tokens, while also optionally calling endpoints.
     /// Works well with builtin functions.
@@ -109,22 +91,9 @@ pub trait MultisigProposeModule: crate::multisig_state::MultisigStateModule {
         &self,
         to: ManagedAddress,
         moax_amount: BigUint,
-        opt_gas_limit: Option<GasLimit>,
         function_call: FunctionCall,
-    ) -> ActionId {
-        require!(
-            moax_amount > 0 || !function_call.is_empty(),
-            "proposed action has no effect"
-        );
-
-        let call_data = CallActionData {
-            to,
-            moax_amount,
-            opt_gas_limit,
-            endpoint_name: function_call.function_name,
-            arguments: function_call.arg_buffer.into_vec_of_buffers(),
-        };
-
+    ) -> usize {
+        let call_data = self.prepare_call_data(to, moax_amount, function_call);
         self.propose_action(Action::SendAsyncCall(call_data))
     }
 
@@ -135,7 +104,7 @@ pub trait MultisigProposeModule: crate::multisig_state::MultisigStateModule {
         source: ManagedAddress,
         code_metadata: CodeMetadata,
         arguments: MultiValueEncoded<ManagedBuffer>,
-    ) -> ActionId {
+    ) -> usize {
         self.propose_action(Action::SCDeployFromSource {
             amount,
             source,
@@ -152,7 +121,7 @@ pub trait MultisigProposeModule: crate::multisig_state::MultisigStateModule {
         source: ManagedAddress,
         code_metadata: CodeMetadata,
         arguments: MultiValueEncoded<ManagedBuffer>,
-    ) -> ActionId {
+    ) -> usize {
         self.propose_action(Action::SCUpgradeFromSource {
             sc_address,
             amount,
@@ -160,45 +129,5 @@ pub trait MultisigProposeModule: crate::multisig_state::MultisigStateModule {
             code_metadata,
             arguments: arguments.into_vec_of_buffers(),
         })
-    }
-
-    #[endpoint(proposeBatch)]
-    fn propose_batch(&self, group_id: GroupId, actions: MultiValueEncoded<Action<Self::Api>>) {
-        require!(group_id != 0, "May not use group ID 0");
-        require!(!actions.is_empty(), "No actions");
-
-        let (caller_id, caller_role) = self.get_caller_id_and_role();
-        require!(
-            caller_role.can_propose(),
-            "only board members and proposers can propose"
-        );
-
-        let own_sc_address = self.blockchain().get_sc_address();
-        let own_shard = self.blockchain().get_shard_of_address(&own_sc_address);
-
-        let mut action_mapper = self.action_mapper();
-        let mut action_groups_mapper = self.action_groups(group_id);
-        for action in actions {
-            require!(
-                !action.is_nothing() && !action.is_async_call(),
-                "Invalid action"
-            );
-
-            if let Action::SendTransferExecuteMoax(call_data) = &action {
-                let other_sc_shard = self.blockchain().get_shard_of_address(&call_data.to);
-                require!(
-                    own_shard == other_sc_shard,
-                    "All transfer exec must be to the same shard"
-                );
-            }
-
-            let action_id = action_mapper.push(&action);
-            if caller_role.can_sign() {
-                let _ = self.action_signer_ids(action_id).insert(caller_id);
-            }
-
-            let _ = action_groups_mapper.insert(action_id);
-            self.group_for_action(action_id).set(group_id);
-        }
     }
 }

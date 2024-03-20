@@ -1,5 +1,5 @@
 PEM_FILE="./ping-pong.pem"
-PING_PONG_CONTRACT="./dx-sdk-rs-new/contracts/examples/ping-pong-moax"
+PING_PONG_CONTRACT="./mx-sdk-rs/contracts/examples/ping-pong-moax"
 
 PROXY_ARGUMENT="--proxy=https://devnet-api.dharitri.com"
 CHAIN_ARGUMENT="--chain=D"
