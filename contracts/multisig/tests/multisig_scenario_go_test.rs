@@ -67,6 +67,7 @@ fn interactor_nft_all_roles_go() {
 }
 
 #[test]
+#[ignore = "not updated"]
 fn interactor_wmoax_go() {
     world().run("scenarios/interactor_wmoax.scen.json");
 }

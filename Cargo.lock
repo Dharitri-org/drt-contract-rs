@@ -55,18 +55,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe"
 
 [[package]]
-name = "ahash"
-version = "0.8.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e89da841a80418a9b391ebaea17f5c112ffaaa96f621d2c285b5174da76b9011"
-dependencies = [
- "cfg-if",
- "once_cell",
- "version_check",
- "zerocopy",
-]
-
-[[package]]
 name = "aho-corasick"
 version = "1.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -74,12 +62,6 @@ checksum = "8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916"
 dependencies = [
  "memchr",
 ]
-
-[[package]]
-name = "allocator-api2"
-version = "0.2.16"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0942ffc6dcaadf03badf6e6a2d0228460359d5e34b57ccdc720b7382dfbd5ec5"
 
 [[package]]
 name = "anstream"
@@ -570,7 +552,7 @@ checksum = "553150902e88ebe93a6db89903f51c85546d32345a592a2bbf6a896f21ae0a8b"
 
 [[package]]
 name = "dharitri-price-aggregator-sc"
-version = "0.13.4"
+version = "0.13.5"
 dependencies = [
  "arrayvec",
  "dharitri-sc",
@@ -589,14 +571,13 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc"
-version = "0.13.4"
+version = "0.13.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d8bdf1c49d9ae59d5ca7ed940a7b4aca53ae2e9b18b44f0e4df02f517dfa8dd1"
+checksum = "abdc7c34d77d1e1be455ff5eba3a41641c9d810bc2afe49779a0da2a16f63969"
 dependencies = [
  "bitflags 2.5.0",
  "dharitri-sc-codec",
  "dharitri-sc-derive",
- "hashbrown",
  "hex-literal",
  "num-traits",
 ]
@@ -626,9 +607,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-derive"
-version = "0.13.4"
+version = "0.13.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9f5ed1da5afe2ca91fc75c11a4beeaadb476e958e049e85171bcf08977288b12"
+checksum = "0a1bf143fba1932f8b97c7a154904edec3220274dc902c0f3225b8165e67e5a7"
 dependencies = [
  "hex",
  "proc-macro2",
@@ -639,9 +620,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-meta"
-version = "0.13.4"
+version = "0.13.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "943bf836f3ea55e6185e9d156380fd34d94ac18892cc01aef222bb5a32e5d093"
+checksum = "aba401c51032e033781ddebe586f7ed2019bf56c75d5d9ebdfd06baf4de2a6d1"
 dependencies = [
  "clap",
  "colored",
@@ -665,18 +646,18 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-modules"
-version = "0.13.4"
+version = "0.13.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "83f94c922524f3e35475c582fbfb37f6f224abe44462709b1fec8e55bed068cb"
+checksum = "8a063ebacf01f8eca84fffb62644d51f8c139e355f26a759c43011e47062dccc"
 dependencies = [
  "dharitri-sc",
 ]
 
 [[package]]
 name = "dharitri-sc-scenario"
-version = "0.13.4"
+version = "0.13.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "459567b1a09aaccc29f35b4d58d9f7dba85d294779862793ec6eb06772e935d9"
+checksum = "dbdb7a442a34538ca21846388ca4dd6aae94acf65e2cac540179571d5f19f287"
 dependencies = [
  "base64",
  "bech32",
@@ -702,9 +683,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-sc-snippets"
-version = "0.13.4"
+version = "0.13.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ade102f1431e4590bcc937fb1530bd7c4308d59736ca7c03812ad27147d473f3"
+checksum = "5681be3d434225a45871cdffd8b9230949d836b9348340e325429ba2c24fd7d7"
 dependencies = [
  "base64",
  "dharitri-sc-scenario",
@@ -744,7 +725,7 @@ dependencies = [
 
 [[package]]
 name = "dharitri-wmoax-swap-sc"
-version = "0.13.4"
+version = "0.13.5"
 dependencies = [
  "dharitri-sc",
  "dharitri-sc-modules",
@@ -753,9 +734,9 @@ dependencies = [
 
 [[package]]
 name = "dharitri-wmoax-swap-sc"
-version = "0.13.4"
+version = "0.13.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f3463dfc01dae98de805ab90db2f0e18f9755c6a2f2dd7100f0272145dda852b"
+checksum = "2919f52d4155c8f6d750d6756993a02b049a259ad6410fc768033b8928a5d14e"
 dependencies = [
  "dharitri-sc",
  "dharitri-sc-modules",
@@ -767,7 +748,7 @@ version = "0.0.0"
 dependencies = [
  "dharitri-sc",
  "dharitri-sc-meta",
- "dharitri-wmoax-swap-sc 0.13.4",
+ "dharitri-wmoax-swap-sc 0.13.5",
 ]
 
 [[package]]
@@ -918,6 +899,28 @@ version = "0.0.0"
 dependencies = [
  "dharitri-sc-meta",
  "order-book-factory",
+]
+
+[[package]]
+name = "fair-launch"
+version = "0.0.0"
+dependencies = [
+ "crowdfunding-dct",
+ "dharitri-sc",
+ "dharitri-sc-modules",
+ "dharitri-sc-scenario",
+ "hex",
+ "num-bigint",
+ "num-traits",
+ "pair-mock",
+]
+
+[[package]]
+name = "fair-launch-meta"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc-meta",
+ "fair-launch",
 ]
 
 [[package]]
@@ -1147,10 +1150,6 @@ name = "hashbrown"
 version = "0.14.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604"
-dependencies = [
- "ahash",
- "allocator-api2",
-]
 
 [[package]]
 name = "heck"
@@ -1518,7 +1517,7 @@ dependencies = [
  "dharitri-sc",
  "dharitri-sc-modules",
  "dharitri-sc-scenario",
- "dharitri-wmoax-swap-sc 0.13.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "dharitri-wmoax-swap-sc 0.13.6",
  "factorial",
  "hex",
  "num-bigint",
@@ -1535,7 +1534,7 @@ dependencies = [
  "dharitri-sc-snippets",
  "multisig",
  "serde",
- "toml 0.7.8",
+ "toml 0.8.12",
 ]
 
 [[package]]
@@ -1703,6 +1702,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "on-chain-claim"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc",
+ "dharitri-sc-modules",
+ "dharitri-sc-scenario",
+]
+
+[[package]]
+name = "on-chain-claim-meta"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc-meta",
+ "on-chain-claim",
+]
+
+[[package]]
 name = "once_cell"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1783,6 +1799,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "pair-mock"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc",
+ "dharitri-sc-scenario",
+ "num-bigint",
+]
+
+[[package]]
+name = "pair-mock-meta"
+version = "0.0.0"
+dependencies = [
+ "dharitri-sc-meta",
+ "pair-mock",
+]
+
+[[package]]
 name = "parking_lot"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1818,7 +1851,7 @@ dependencies = [
  "adder",
  "dharitri-sc",
  "dharitri-sc-scenario",
- "dharitri-wmoax-swap-sc 0.13.4",
+ "dharitri-wmoax-swap-sc 0.13.5",
  "num-bigint",
 ]
 
@@ -3023,26 +3056,6 @@ checksum = "524e57b2c537c0f9b1e69f1965311ec12182b4122e45035b1508cd24d2adadb1"
 dependencies = [
  "cfg-if",
  "windows-sys 0.48.0",
-]
-
-[[package]]
-name = "zerocopy"
-version = "0.7.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74d4d3961e53fa4c9a25a8637fc2bfaf2595b3d3ae34875568a5cf64787716be"
-dependencies = [
- "zerocopy-derive",
-]
-
-[[package]]
-name = "zerocopy-derive"
-version = "0.7.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ce1b18ccd8e73a9321186f97e46f9f04b778851177567b1975109d26a08d2a6"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
 ]
 
 [[package]]
